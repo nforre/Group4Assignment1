@@ -3,6 +3,7 @@
 
 public class groceryManager {
 
+    // print inventory code logic
     public static void printInventory(String[] names, double[] prices, int[] stocks) {
         for (int i = 0; i < names.length; i++) {
             if (names[i] != null) {
@@ -18,12 +19,25 @@ public class groceryManager {
         }
     }
 
-    
+    //everyone add ur coding logic under or above printInventory
+
+
+
+
+
+
+
+
+
+
+
+    // main function where we test
     public static void main(String[] args) {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
         int[] itemStocks = new int[10];
 
+        // TEMP TESTING DATA
         itemNames[0] = "Oranges";
         itemPrices[0] = 1.39;
         itemStocks[0] = 45;
