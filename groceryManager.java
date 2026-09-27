@@ -36,7 +36,6 @@ public class groceryManager {
      */
     public static void printMenu(String[] names, double[] prices, int[] stocks) {
         System.out.println("Welcome to the Grocery Management page.");
-        System.outx
         Scanner cin = new Scanner(System.in);
         int userInput = 0;
         while(userInput != 3) {
@@ -62,7 +61,7 @@ public class groceryManager {
             }
             else 
             {
-                System.out.println("Exiting the program");
+                System.out.println("Exiting the program"); // exiting the program
             }
         }    
         
