@@ -20,8 +20,16 @@ public class groceryManager {
         }
     }
 
-    // START TASK 2 HERE. make sure to use public static void restockItem(String[] names, int[] stocks, String target, int amount).
-    // I don
+    /**
+     * Searches for an item by name in the inventory and increases its stock amount.
+     * If the item is not found, displays an error message.
+     *
+     * @param names   array of item names
+     * @param stocks  array of current item stock quantities
+     * @param target  the name of the item to restock
+     * @param amount  the quantity to add to the existing stock
+     */
+    
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
     {
         boolean found = false;
