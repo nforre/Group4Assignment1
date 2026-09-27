@@ -1,5 +1,5 @@
 // Grocery Management System
-// Group member names: Journey Forrest, Dhirendra Neupane
+// Group member names: Journey Forrest, Dhirendra Neupane, Armando Padron
 import java.util.Scanner;
 
 public class groceryManager {
@@ -29,7 +29,7 @@ public class groceryManager {
      * @param target  the name of the item to restock
      * @param amount  the quantity to add to the existing stock
      */
-    
+
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
     {
         boolean found = false;
@@ -44,7 +44,7 @@ public class groceryManager {
         }
         if(!found)
         {
-            system.out.println("Itenm is not found. Please search again.")
+            System.out.println("Itenm is not found. Please search again.")
         }
     }
 
