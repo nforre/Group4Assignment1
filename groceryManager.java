@@ -21,20 +21,27 @@ public class groceryManager {
     }
 
     // START TASK 2 HERE. make sure to use public static void restockItem(String[] names, int[] stocks, String target, int amount).
+    // I don
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
     {
 
     }
 
 
-    //everyone add ur coding logic under or above printInventory
+    /**
+     * Print function to print out the user options
+     * @param names, the array containing item names
+     * @param prices, the array containing prices
+     * @param stocks, the array contatining stocks
+     */
     public static void printMenu(String[] names, double[] prices, int[] stocks) {
         System.out.println("Welcome to the Grocery Management page.");
+        System.outx
         Scanner cin = new Scanner(System.in);
         int userInput = 0;
         while(userInput != 3) {
             
-            System.out.println("Please, enter your choice: ");
+            System.out.println("\nPlease, enter your choice: ");
             System.out.println("1. Display inventory");
             System.out.println("2. Restock");
             System.out.println("3. Exit");
@@ -42,7 +49,7 @@ public class groceryManager {
             
             if(userInput == 1)
             {
-                printInventory(names, prices, stocks);
+                printInventory(names, prices, stocks); // Calling Task 1
             } 
             else if(userInput == 2)
             {   System.out.print("Enter the name of your item: ");
@@ -51,11 +58,11 @@ public class groceryManager {
                 System.out.print("Enter amount: ");
                 int amount = cin.nextInt();
 
-                restockItem(names, stocks, target, amount);
+                restockItem(names, stocks, target, amount); // Calling Task 2
             }
             else 
             {
-                System.out.println("Exitting the program");
+                System.out.println("Exiting the program");
             }
         }    
         
