@@ -16,7 +16,7 @@ public class GroceryManager {
      * the grocery inventory. The function prints out the items name, price,
      * and amount in stock.
      * 
-     * @param names array of item names
+     * @param names  array of item names
      * @param prices array of item prices
      * @param stocks array of amount item(s) have in stock
      */
@@ -41,10 +41,10 @@ public class GroceryManager {
      * Searches for an item by name in the inventory and increases its stock amount.
      * If the item is not found, displays an error message.
      *
-     * @param names   array of item names
-     * @param stocks  array of current item stock quantities
-     * @param target  the name of the item to restock
-     * @param amount  the quantity to add to the existing stock
+     * @param names  array of item names
+     * @param stocks array of current item stock quantities
+     * @param target the name of the item to restock
+     * @param amount the quantity to add to the existing stock
      */
 
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
@@ -67,11 +67,11 @@ public class GroceryManager {
 
 
     /**
-     * Print function to print out the user options
+     * Print menu function to print out the user options.
      * 
-     * @param names, the array containing item names
-     * @param prices, the array containing prices
-     * @param stocks, the array containing stocks
+     * @param names  the array containing item names
+     * @param prices the array containing prices
+     * @param stocks the array containing stocks
      */
     public static void printMenu(String[] names, double[] prices, int[] stocks, Scanner cin) {
         System.out.println("Welcome to the Grocery Management page.");
@@ -81,6 +81,7 @@ public class GroceryManager {
             System.out.println("2. Restock");
             System.out.println("3. Exit");
             int userInput = cin.nextInt();
+            cin.nextLine();
             
             if(userInput == 1)
             {
@@ -88,7 +89,7 @@ public class GroceryManager {
             } 
             else if(userInput == 2)
             {   System.out.print("\nEnter the name of your item: ");
-                String target = cin.next();
+                String target = cin.nextLine();
 
                 System.out.print("Enter amount: ");
                 int amount = cin.nextInt();
@@ -97,7 +98,8 @@ public class GroceryManager {
             }
             else 
             {
-                System.out.println("Exiting the program"); // exiting the program
+                System.out.println("Exiting the program");
+                break; // exiting the program
             }
         }  
     }
@@ -106,7 +108,7 @@ public class GroceryManager {
      * Main function used to test GroceryManager class
      * and print out data.
      * 
-     * @param args
+     * @param args takes in arguments
      */
     public static void main(String[] args) {
         String[] itemNames = new String[10];
@@ -114,18 +116,13 @@ public class GroceryManager {
         int[] itemStocks = new int[10];
         Scanner cin = new Scanner(System.in);
 
-        // TEMP TESTING DATA
-        itemNames[0] = "Oranges";
-        itemPrices[0] = 1.39;
-        itemStocks[0] = 45;
-
-        itemNames[1] = "Mangoes";
-        itemPrices[1] = 1.50;
-        itemStocks[1] = 39;
-
-        itemNames[2] = "Onions";
-        itemPrices[2] = 1.12;
-        itemStocks[2] = 125;
+        // Adding inventory data
+        itemNames[0] = "Oranges";   itemPrices[0] = 1.39;   itemStocks[0] = 45;
+        itemNames[1] = "Mangoes";   itemPrices[1] = 1.50;   itemStocks[1] = 39;
+        itemNames[2] = "Onions";    itemPrices[2] = 1.12;   itemStocks[2] = 125;
+        itemNames[3] = "Bananas";   itemPrices[3] = 1.35;   itemStocks[3] = 40;
+        itemNames[4] = "Bell Pepper";   itemPrices[4] = 1.75;   itemStocks[4] = 36;
+        itemNames[5] = "Apples";    itemPrices[5] = 1.10;   itemStocks[5] = 17;
 
         printMenu(itemNames, itemPrices, itemStocks, cin);  
         cin.close();
