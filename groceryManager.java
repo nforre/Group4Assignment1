@@ -27,7 +27,8 @@ public class GroceryManager {
             if (names[i] != null) {
                 
                 System.out.println("Item number: " + i);
-                System.out.println("Item name: " + names[i] + "\nItem Price: $" + prices[i]);
+                System.out.println("Item name: " + names[i]);
+                System.out.printf("Item Price: $%.2f%n", prices[i]); // formats zeros at the end of prices
                 System.out.println("Item stock: " + stocks[i]);
                 System.out.println("-----------------------");
             }
@@ -71,6 +72,7 @@ public class GroceryManager {
      * @param names  the array containing item names
      * @param prices the array containing prices
      * @param stocks the array containing stocks
+     * @param cin    the scanner used to read user input
      */
     public static void printMenu(String[] names, double[] prices, int[] stocks, Scanner cin) {
         while(true) {
