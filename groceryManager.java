@@ -2,17 +2,34 @@
 // Group member names: Journey Forrest, Dhirendra Neupane, Armando Padron
 import java.util.Scanner;
 
+/**
+ * The groceryManager class is created to simulate managing 
+ * inventory data in a grocery store. It prints out the inventory, allows
+ * for the search and restock of an item. The grocery store data is all 
+ * accessible through a printed menu.
+ * 
+ */
 public class groceryManager {
 
-    // print inventory code logic TASK 1
+    /**
+     * The printInventory function prints out the list of items in 
+     * the grocery inventory. The function prints out the items name, price,
+     * and amount in stock.
+     * 
+     * @param names array of item names
+     * @param prices array of item prices
+     * @param stocks array of amount item(s) have in stock
+     */
     public static void printInventory(String[] names, double[] prices, int[] stocks) {
+        System.out.println("------ INVENTORY ------");
+        System.out.println("-----------------------");
         for (int i = 0; i < names.length; i++) {
             if (names[i] != null) {
-                System.out.println("------- INVENTORY -----");
-                System.out.println("-----------------------");
+                
                 System.out.println("Item number: " + i);
                 System.out.println("Item name: " + names[i] + "\nItem Price: " + prices[i] + "$");
                 System.out.println("Item stock: " + stocks[i]);
+                System.out.println("-----------------------");
             }
             else {
 
@@ -44,16 +61,17 @@ public class groceryManager {
         }
         if(!found)
         {
-            System.out.println("Itenm is not found. Please search again.")
+            System.out.println("Item is not found. Please search again.");
         }
     }
 
 
     /**
      * Print function to print out the user options
+     * 
      * @param names, the array containing item names
      * @param prices, the array containing prices
-     * @param stocks, the array contatining stocks
+     * @param stocks, the array containing stocks
      */
     public static void printMenu(String[] names, double[] prices, int[] stocks) {
         System.out.println("Welcome to the Grocery Management page.");
@@ -72,7 +90,7 @@ public class groceryManager {
                 printInventory(names, prices, stocks); // Calling Task 1
             } 
             else if(userInput == 2)
-            {   System.out.print("Enter the name of your item: ");
+            {   System.out.print("\nEnter the name of your item: ");
                 String target = cin.next();
 
                 System.out.print("Enter amount: ");
@@ -85,10 +103,15 @@ public class groceryManager {
                 System.out.println("Exiting the program"); // exiting the program
             }
         }    
-        
+        cin.close(); // closed cin to avoid memory leak :)
     }
 
-    // main function where we test
+    /**
+     * Main function used to test groceryManager class
+     * and print out data.
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
