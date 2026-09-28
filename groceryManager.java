@@ -3,13 +3,13 @@
 import java.util.Scanner;
 
 /**
- * The groceryManager class is created to simulate managing 
+ * The GroceryManager class is created to simulate managing 
  * inventory data in a grocery store. It prints out the inventory, allows
  * for the search and restock of an item. The grocery store data is all 
  * accessible through a printed menu.
  * 
  */
-public class groceryManager {
+public class GroceryManager {
 
     /**
      * The printInventory function prints out the list of items in 
@@ -21,13 +21,13 @@ public class groceryManager {
      * @param stocks array of amount item(s) have in stock
      */
     public static void printInventory(String[] names, double[] prices, int[] stocks) {
-        System.out.println("------ INVENTORY ------");
+        System.out.println("\n------ INVENTORY ------");
         System.out.println("-----------------------");
         for (int i = 0; i < names.length; i++) {
             if (names[i] != null) {
                 
                 System.out.println("Item number: " + i);
-                System.out.println("Item name: " + names[i] + "\nItem Price: " + prices[i] + "$");
+                System.out.println("Item name: " + names[i] + "\nItem Price: $" + prices[i]);
                 System.out.println("Item stock: " + stocks[i]);
                 System.out.println("-----------------------");
             }
@@ -50,7 +50,7 @@ public class groceryManager {
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
     {
         boolean found = false;
-        for(int i = 0; i , names.length; i++)
+        for(int i = 0; i < names.length; i++)
         {
             if(names[i] != null && names[i].equalsIgnoreCase(target))
             {
@@ -77,7 +77,7 @@ public class groceryManager {
         System.out.println("Welcome to the Grocery Management page.");
         Scanner cin = new Scanner(System.in);
         int userInput = 0;
-        while(userInput != 3) {
+        while(true) {
             
             System.out.println("\nPlease, enter your choice: ");
             System.out.println("1. Display inventory");
@@ -91,7 +91,7 @@ public class groceryManager {
             } 
             else if(userInput == 2)
             {   System.out.print("\nEnter the name of your item: ");
-                String target = cin.next();
+                String target = cin.nextLine();
 
                 System.out.print("Enter amount: ");
                 int amount = cin.nextInt();
@@ -102,12 +102,12 @@ public class groceryManager {
             {
                 System.out.println("Exiting the program"); // exiting the program
             }
-        }    
-        cin.close(); // closed cin to avoid memory leak :)
+        cin.close();    
+        }  
     }
 
     /**
-     * Main function used to test groceryManager class
+     * Main function used to test GroceryManager class
      * and print out data.
      * 
      * @param args
@@ -130,12 +130,7 @@ public class groceryManager {
         itemPrices[2] = 1.12;
         itemStocks[2] = 125;
 
-
-
-        
-        printMenu(itemNames, itemPrices, itemStocks);
-
-        
+        printMenu(itemNames, itemPrices, itemStocks);  
     }
 }
 
