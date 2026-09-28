@@ -46,7 +46,6 @@ public class GroceryManager {
      * @param target the name of the item to restock
      * @param amount the quantity to add to the existing stock
      */
-
     public static void restockItem(String[] names, int[] stocks, String target, int amount)
     {
         boolean found = false;
@@ -74,8 +73,8 @@ public class GroceryManager {
      * @param stocks the array containing stocks
      */
     public static void printMenu(String[] names, double[] prices, int[] stocks, Scanner cin) {
-        System.out.println("Welcome to the Grocery Management page.");
         while(true) {
+            System.out.println("\nWelcome to the Grocery Management page.");
             System.out.println("\nPlease, enter your choice: ");
             System.out.println("1. Display inventory");
             System.out.println("2. Restock");
@@ -105,8 +104,9 @@ public class GroceryManager {
     }
 
     /**
-     * Main function used to test GroceryManager class
-     * and print out data.
+     * Main function used to create grocery items
+     * and print out data. Uses a scanner to read user input.
+     * The menu loop is handled in printMenu().
      * 
      * @param args takes in arguments
      */
