@@ -73,17 +73,14 @@ public class GroceryManager {
      * @param prices, the array containing prices
      * @param stocks, the array containing stocks
      */
-    public static void printMenu(String[] names, double[] prices, int[] stocks) {
+    public static void printMenu(String[] names, double[] prices, int[] stocks, Scanner cin) {
         System.out.println("Welcome to the Grocery Management page.");
-        Scanner cin = new Scanner(System.in);
-        int userInput = 0;
         while(true) {
-            
             System.out.println("\nPlease, enter your choice: ");
             System.out.println("1. Display inventory");
             System.out.println("2. Restock");
             System.out.println("3. Exit");
-            userInput = cin.nextInt();
+            int userInput = cin.nextInt();
             
             if(userInput == 1)
             {
@@ -91,7 +88,7 @@ public class GroceryManager {
             } 
             else if(userInput == 2)
             {   System.out.print("\nEnter the name of your item: ");
-                String target = cin.nextLine();
+                String target = cin.next();
 
                 System.out.print("Enter amount: ");
                 int amount = cin.nextInt();
@@ -102,7 +99,6 @@ public class GroceryManager {
             {
                 System.out.println("Exiting the program"); // exiting the program
             }
-        cin.close();    
         }  
     }
 
@@ -116,6 +112,7 @@ public class GroceryManager {
         String[] itemNames = new String[10];
         double[] itemPrices = new double[10];
         int[] itemStocks = new int[10];
+        Scanner cin = new Scanner(System.in);
 
         // TEMP TESTING DATA
         itemNames[0] = "Oranges";
@@ -130,7 +127,8 @@ public class GroceryManager {
         itemPrices[2] = 1.12;
         itemStocks[2] = 125;
 
-        printMenu(itemNames, itemPrices, itemStocks);  
+        printMenu(itemNames, itemPrices, itemStocks, cin);  
+        cin.close();
     }
 }
 
