@@ -75,10 +75,10 @@ public class GroceryManager {
     public static void printMenu(String[] names, double[] prices, int[] stocks, Scanner cin) {
         while(true) {
             System.out.println("\nWelcome to the Grocery Management page.");
-            System.out.println("\nPlease, enter your choice: ");
-            System.out.println("1. Display inventory");
+            System.out.println("\n1. Display inventory");
             System.out.println("2. Restock");
             System.out.println("3. Exit");
+            System.out.print("Please, enter your choice: ");
             int userInput = cin.nextInt();
             cin.nextLine();
             
@@ -95,10 +95,13 @@ public class GroceryManager {
 
                 restockItem(names, stocks, target, amount); // Calling Task 2
             }
-            else 
+            else if(userInput == 3) 
             {
                 System.out.println("Exiting the program");
                 break; // exiting the program
+            }
+            else{
+                System.out.println("Invalid input, please try again.");
             }
         }  
     }
