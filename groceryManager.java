@@ -9,7 +9,7 @@ import java.util.Scanner;
  * accessible through a printed menu.
  * 
  */
-public class GroceryManager {
+public class groceryManager {
 
     /**
      * The printInventory function prints out the list of items in 
