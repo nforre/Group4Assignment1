@@ -16,7 +16,7 @@ Sandip Yadev:
 
 # How to run 
 1. Clone the repository
-2. Run the main.java file in a compiler of your choice.
+2. Run the groceryManager.java file in a compiler of your choice.
 3. Follow the menu directions to use the program.
 
 # Screenshots of program
