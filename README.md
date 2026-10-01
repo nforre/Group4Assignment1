@@ -30,5 +30,5 @@ All screenshots are located in the [`screenshots/`](./screenshots) folder:
 - `menu-exit.png` —> exiting the program
 
 # UML Diagram
-The UML is located in the same directory as the main file and is called 
+The UML is located in the same directory as the main file and is called `GroceryManager-UML.png`
 
